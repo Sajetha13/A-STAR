@@ -1,6 +1,6 @@
 <h1>ExpNo 4 : Implement A* search algorithm for a Graph</h1> 
-<h3>Name:       </h3>
-<h3>Register Number:           </h3>
+<h3>Name: S.Sajetha       </h3>
+<h3>Register Number: 212223100049          </h3>
 <H3>Aim:</H3>
 <p>To ImplementA * Search algorithm for a Graph using Python 3.</p>
 <H3>Algorithm:</H3>
@@ -53,7 +53,9 @@ A* Search Algorithm
 ``````
 <hr>
 <h2>Program</h2>
+
 ``````
+
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -122,35 +124,37 @@ def aStarAlgo(start_node, stop_node):
     print('Path does not exist!')
     return None
 
-# Define function to return neighbor and its distance from the passed node
-def get_neighbors(v):
-    return graph[v] if v in graph else []  # Return empty list if node has no neighbors
+        # Define function to return neighbor and its distance from the passed node
+        def get_neighbors(v):
+            return graph[v] if v in graph else []  # Return empty list if node has no neighbors
+        
+        def heuristic(n):
+            return H_dist[n] if n in H_dist else float('inf')  # Return heuristic value or inf if not found
+        
+        # Describe your graph here
+        graph = defaultdict(list)
+        n, e = map(int, input("Enter number of nodes and edges: ").split())
+        for i in range(e):
+            u, v, cost = map(str, input("Enter edge (u v cost): ").split())
+            t = (v, float(cost))
+            graph[u].append(t)
+            t1 = (u, float(cost))
+            graph[v].append(t1)
+        
+        for i in range(n):
+            node, h = map(str, input("Enter node and heuristic value: ").split())
+            H_dist[node] = float(h)
+        
+        print("Heuristic Distances:", H_dist)
+        print("Graph Structure:", dict(graph))
+        
+        # Run the A* algorithm
+        start = input("Enter start node: ")
+        goal = input("Enter goal node: ")
+        aStarAlgo(start, goal)
 
-def heuristic(n):
-    return H_dist[n] if n in H_dist else float('inf')  # Return heuristic value or inf if not found
-
-# Describe your graph here
-graph = defaultdict(list)
-n, e = map(int, input("Enter number of nodes and edges: ").split())
-for i in range(e):
-    u, v, cost = map(str, input("Enter edge (u v cost): ").split())
-    t = (v, float(cost))
-    graph[u].append(t)
-    t1 = (u, float(cost))
-    graph[v].append(t1)
-
-for i in range(n):
-    node, h = map(str, input("Enter node and heuristic value: ").split())
-    H_dist[node] = float(h)
-
-print("Heuristic Distances:", H_dist)
-print("Graph Structure:", dict(graph))
-
-# Run the A* algorithm
-start = input("Enter start node: ")
-goal = input("Enter goal node: ")
-aStarAlgo(start, goal)
 ``````
+
 <hr>
 <h2>Sample Graph I</h2>
 <hr>
