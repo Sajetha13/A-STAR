@@ -53,7 +53,7 @@ A* Search Algorithm
 ``````
 <hr>
 <h2>Program</h2>
-```
+``````
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -150,7 +150,7 @@ print("Graph Structure:", dict(graph))
 start = input("Enter start node: ")
 goal = input("Enter goal node: ")
 aStarAlgo(start, goal)
-```
+``````
 <hr>
 <h2>Sample Graph I</h2>
 <hr>
@@ -221,3 +221,8 @@ G 0 <br>
 <h2>Sample Output</h2>
 <hr>
 Path found: ['A', 'E', 'D', 'G']
+
+<h2>Output</h2>
+
+![image](https://github.com/user-attachments/assets/1e304c4c-6abd-4750-83f5-a5012c2ecc6d)
+
